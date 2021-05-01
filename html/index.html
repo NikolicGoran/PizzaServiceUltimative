@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/functions.js"></script>
+    <meta charset="UTF-8">
+    <title>titel</title>
+</head>
+<body onload="loadStyle()">
+<form action="danke.html" method="post" name="myForm" onsubmit="return pruefeAdresse()">
+    <h1 id="PizzaServiseSzu">Pizza Servise SZU</h1>
+
+    <button type="button" onclick="insertCookies()" id="lastOrder">Letzte Bestellung wiederholen?</button>
+    <button type="button" onclick="deleteCookies()" id="delete">Alte Bestullung löschen?</button>
+    <button type="button" onclick="schowSettings()" id="settings">Einstellungen...</button>
+    <p></p>
+
+    <div id="selectGroeseFarbe">
+    <label for="selectGroeße">Größe</label>
+    <select id="selectGroeße" name="selectGroese" onchange="berechnePreis(-1)">
+        <option value="6">mittel</option>
+        <option value="5">klein</option>
+        <option value="7">groß</option>
+    </select>
+    </div>
+
+    <div id="belagFarbe">
+    <h2 id="Belag">Belag:</h2>
+    <input id="salamiRadio" value="Salami" type="radio" name="belagRadio" required>
+        <label for="salamiRadio">Salami</label>
+
+    <input id="meeresRadio" value="Meeresfrüchte" type="radio" name="belagRadio" required>
+        <label for="meeresRadio">Meeresfrühte</label>
+
+    <input id="diavoloRadio" value="Diavolo" type="radio" name="belagRadio" required>
+        <label for="diavoloRadio">Diavolo</label>
+    </div>
+
+    <div id="ExtrabelagFarbe">
+    <h2 id="Extrabelag">Extrabelag:</h2>
+    <input type="checkbox" id="maisSelect" onchange="berechnePreis(0)">
+        <label for="maisSelect">Mais</label>
+
+    <input type="checkbox" id="sardellenSelect" onchange="berechnePreis(1)">
+        <label for="sardellenSelect">Sardellen</label>
+
+    <input type="checkbox" id="schineknSelect" onchange="berechnePreis(2)">
+        <label for="schineknSelect">Schinken</label>
+
+    <input type="checkbox" id="eiSelect" onchange="berechnePreis(3)">
+        <label for="eiSelect">Ei</label>
+
+    <input type="checkbox" id="olivenSelect" onchange="berechnePreis(4)">
+        <label for="olivenSelect">Oliven</label>
+
+    <input type="checkbox" id="chiliSelect" onchange="berechnePreis(5)">
+        <label for="chiliSelect">Chili</label>
+    </div>
+
+    <div id="AdressFarbe">
+    <h2 id="Lieferadresse">Lieferadrese:</h2>
+    <table>
+        <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input id="name" type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td><label for="straße">Straße:</label></td>
+            <td><input id="straße" type="text" name="strase"></td>
+        </tr>
+        <tr>
+            <td><label for="plz">Postleitzahl:</label></td>
+            <td><input id="plz" type="number" name="plz"></td>
+        </tr>
+        <tr>
+            <td><label for="ort">Ort:</label></td>
+            <td><input id="ort" type="text" name="ort"></td>
+        </tr>
+    </table>
+    <p></p>
+    </div>
+
+    <button type="submit" id="submit">Bestellung absenden</button>
+
+    <h2 id="Gesamtpreis">Gesamtpreis:</h2>
+    <h2 id="pizzaPreis">6</h2>
+    <p></p>
+</form>
+
+<div id="einstellungen">
+</div>
+
+</body>
+</html>
